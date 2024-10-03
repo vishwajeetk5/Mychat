@@ -32,5 +32,11 @@ io.on('connection', (socket) => {
     socketConnected.delete(socket.id);
     io.emit('total-clients',socketConnected.size)
   })
+
+  socket.on('message',(data)=>{
+    console.log(data);
+    socket.broadcast.emit('chat-msg',data)
+  })
+
 });
 
