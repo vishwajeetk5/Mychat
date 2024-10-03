@@ -37,6 +37,12 @@ io.on('connection', (socket) => {
     console.log(data);
     socket.broadcast.emit('chat-msg',data)
   })
+  
+  socket.on('typing',(who)=>{
+    // msgFeedback.innerHTML= who+"is typing..."
+    // console.log(who +" is typing")
+      socket.broadcast.emit('who-is-typing',who)
+    })
 
 });
 
