@@ -9,43 +9,61 @@
     <script src='https://kit.fontawesome.com/b8044e56f8.js' crossorigin='anonymous'></script>
 <script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=' crossorigin='anonymous'></script>
 
-<link rel='stylesheet' href='/style.css'>
+<link rel='stylesheet' href='./style.css'>
 </head>
 <body>
-    <h1>MyChat 💬</h1>
-
-<div class = "main" >
-    <span><i class="far fa-user"></i>
-        <input type="text" id="name-input" value="anonymous" >
-    </span>
-    <ul id="msg-cont">
-        <li class = "msg-left">
-            <p class="msg">
-                Hi,
-                <span>Love 🔻3 oct 12:00 AM</span>
-            </p>
+    <h1 class="title">My Chat 💬</h1>
+    <div class="main">
+      <div class="name">
+        <span><i class="far fa-user"></i></span>
+        <input
+          type="text"
+          id="name-input"
+          class="name-input"
+          value="anonymous"
+          maxlength="20"
+        />
+      </div>
+      <p class="feedback" id="feedback"></p>
+      <ul class="msg-cont" id="msg-cont">
+        <!-- These li elements are only for reference, and therefore, they are commented out... -->
+        <!-- <li class="msg-left">
+          <p class="msg">
+            Hi
+            <span>bluebird ● 3 Oct 12:40</span>
+          </p>
         </li>
 
-        <li class = "msg-right">
-            <p class="msg">
-                Hello, How are you?
-                <span>Love 🔻3 oct 12:01 AM</span>
-            </p>
+        <li class="msg-right">
+          <p class="msg">
+            Hello
+            <span>bluebird ● 3 Oct 12:41</span>
+          </p>
         </li>
-    </ul>
 
-    <li id = "msg-feedback">
-        <p class="feedback" id ="feedback"></p>
-    </li>
+        <li class="msg-feedback">
+          <p class="feedback" id="feedback">✍️ killer is typing a msg...</p>
+        </li> -->
+      </ul>
 
-    <form id="msg-form">
-        <input type="text" name="msg" id="msg-input">
-        <button type="submit" class="send-button">Send✈️</button>
-    </form>
+    <form class="msg-form" id="msg-form">
+        <input
+          type="text"
+          name="msg"
+          id="msg-input"
+          class="msg-input"
+          placeholder="Type a message"
+        />
+        <div class="v-divider"></div>
+        <button type="submit" class="send-button">
+          send <span><i class="fas fa-paper-plane"></i></span>
+        </button>
+      </form>
+    </div>
+    <h3 class="clients-total" id="client-total">Total clients: </h3>
+    <div class="fadeIn">
 
-    <p id="tot-clients">Total Clients: </p>
-   
-</div>
+    </div>
     <script src = '/socket.io/socket.io.js'></script>
     <script src='script.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js' integrity='sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r' crossorigin='anonymous'></script>

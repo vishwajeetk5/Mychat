@@ -1,24 +1,163 @@
-/* *{
-    width:0;
-    height:0;
-    box-sizing: border-box;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-.msg-left{
-    padding:1px;
-    margin:2px;
-  background-color: darkgray;
-  border-radius: 5px;
-  position:relative;
-  left:0px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.msg-right{
-    padding: 1px;
-    margin:2px;
-    background-color: palegreen;
-    border-radius: 5px;
-    position:relative;
-  right:0px;
+body {
+  font-family: 'Open Sans', sans-serif;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  place-items: center;
+  background-color: #ebebeb;
 }
 
+.title {
+  margin: 20px 0;
+}
+
+.main {
+  border: 8px solid #dddddd;
+  padding:6px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: rgb(228, 241, 254);
+	box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInFromDown 0.8s ease-out forwards; /* Apply the animation */
+}
+
+@keyframes fadeInFromDown {
+  0% {
+      opacity: 0;
+      transform: translateY(20px); /* Start below */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0); /* End in the original position */
+  }
+}
+
+.name {
+  display: flex;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 8px 16px;
+  color: #7e7e7e;
+  background-color: rgb(228, 241, 254);
+}
+
+.name > span {
+  color: #bbb;
+}
+
+.name-input {
+  font-size: 24px;
+  font-weight: 700;
+  color: #7e7e7e;
+  flex-grow: 1;
+  border: none;
+  margin: 0px 12px;
+  outline: none;
+  background-color: rgb(228, 241, 254);
+}
+
+.msg-cont {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #f6f6f6; */
+  background-image: url(./bgg.png);
+  list-style-type: none;
+  width: 400px;
+  height: 460px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.msg-left,
+.msg-right {
+  list-style: none;
+  padding: 8px 12px;
+  margin: 12px;
+  max-width: 250px;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.msg-left {
+  border-radius: 20px 20px 20px 0;
+  align-self: flex-start;
+  background-color: #fff;
+  box-shadow: -2px 2px 4px #dcdcdc;
+}
+
+.msg-right {
+  border-radius: 20px 0 20px 20px;
+  align-self: flex-end;
+  background-color: #1289fe;
+    color: #fff;
+  box-shadow: 2px 2px 4px #dcdcdc;
+}
+
+.msg-left > p > span,
+.msg-right > p > span {
+  display: block;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.feedback {
+  font-style: italic;
+  font-size: 14px;
+  height:15px;
+  color: #2d2d2d;
+  text-align: center;
+}
+
+.msg-form{
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.msg-input {
+  flex-grow: 1;
+  height: 48px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  background-color: #fff;
+}
+
+.send-button {
+  height: 48px;
+  font-size: 16px;
+  border: none;
+  padding: 0px 20px;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.v-divider {
+  height: 48px;
+  width: 2px;
+  background-color: #f6f6f6;
+}
+
+.clients-total {
+  margin: 20px 0;
+  color: #7e7e7e;
+}
