@@ -1,5 +1,5 @@
 // const socket = io('http://192.168.0.109:3000',{})
-const socket = io('http://localhost:3000',{})
+const socket = io('https://mychat-production-35b7.up.railway.app/',{})
 
 const totClients = document.getElementById('client-total');
 
